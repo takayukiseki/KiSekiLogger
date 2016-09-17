@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">軌関ロガー v3.1</string>
+    <string name="Zero">0</string>
+    <string name="interval_label">取得間隔：</string>
+    <string name="interval_default">200</string>
+    <string name="interval_unit">ms</string>
+    <string name="Start">開始</string>
+    <string name="toggle_on">実行中</string>
+    <string name="toggle_off">停止中</string>
+    <string name="brank" />
+    <string name="save_file_label">保存先：</string>
+    <string name="background_label">バックグラウンド稼働：</string>
+    <string name="on">ON</string>
+    <string name="off">OFF</string>
+    <string name="send_mail_label">停止時にGmailでメール送信：</string>
+    <string name="delete_csv_file">停止時にCSVファイルを削除：</string>
+    <string name="date_now_label">日時：</string>
+    <string name="X_axis">X：</string>
+    <string name="Y_axis">Y：</string>
+    <string name="Z_axis">Z：</string>
+    <string name="accelerometer">加速度センサー[m/s^2]：</string>
+    <string name="gravity">重力センサー[m/s^2]：</string>
+    <string name="linear_accelerometer">直線加速度センサー[m/s^2]：</string>
+    <string name="gyroscope">角速度センサー[rad/s]：</string>
+    <string name="magnetic_field">磁界センサー[μT]：</string>
+    <string name="orientation">方位センサー[deg(rad)]：</string>
+    <string name="azimuth">方位角：</string>
+    <string name="pitch">回転角：</string>
+    <string name="roll">傾斜角：</string>
+    <string name="other_senser_list">その他の搭載されているセンサー：</string>
+    <string name="sensor_available_ok">○利用可能</string>
+    <string name="sensor_available_ng">×未搭載</string>
+    <string name="left_parenthesis">(</string>
+    <string name="right_parenthesis">)</string>
+</resources>
