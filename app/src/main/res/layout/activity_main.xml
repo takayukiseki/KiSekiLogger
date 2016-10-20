@@ -13,32 +13,43 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:id="@+id/linearLayout"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/linearLayout">
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:weightSum="1">
+            android:layout_gravity="end"
+            android:weightSum="1" >
 
-            <Switch
-                android:layout_width="match_parent"
+            <EditText
                 android:layout_height="wrap_content"
-                android:text="@string/background_label"
-                android:id="@+id/swhBackground_Running"
-                android:textOn="@string/on"
-                android:textOff="@string/off"
-                android:checked="true" />
+                android:inputType="textPersonName"
+                android:text="@string/file_name_default"
+                android:ems="10"
+                android:id="@+id/txtFileName"
+                android:layout_weight="0.94"
+                android:selectAllOnFocus="true"
+                android:maxLines="1"
+                android:hint="@string/file_name_hint"
+                android:layout_width="match_parent" />
 
+            <Button
+                android:text="@string/button_initialize"
+                android:layout_width="58dp"
+                android:layout_height="37dp"
+                android:id="@+id/btnFileName_Initialize"
+                android:textSize="10sp" />
         </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="right"
+            android:layout_gravity="end"
             android:weightSum="1">
 
             <Switch
@@ -49,14 +60,14 @@
                 android:textOn="@string/on"
                 android:textOff="@string/off"
                 android:layout_weight="0.64"
-                android:checked="true" />
+                android:checked="false" />
         </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="right"
+            android:layout_gravity="end"
             android:weightSum="1" >
 
             <Switch
@@ -67,7 +78,7 @@
                 android:textOn="@string/on"
                 android:textOff="@string/off"
                 android:layout_weight="0.64"
-                android:checked="true" />
+                android:checked="false" />
         </LinearLayout>
 
         <LinearLayout
@@ -75,7 +86,26 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_alignEnd="@+id/linearLayout">
+            android:layout_alignRight="@+id/linearLayout">
+
+            <ToggleButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/Start"
+                android:id="@+id/tglStart"
+                android:checked="false"
+                android:textOff="@string/toggle_off"
+                android:textOn="@string/toggle_on"
+                android:longClickable="false" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignRight="@+id/linearLayout">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -84,7 +114,7 @@
                 android:id="@+id/txtFilePath_Title"
                 android:enabled="true"
                 android:layout_alignParentTop="true"
-                android:layout_alignEnd="@+id/linearLayout" />
+                android:layout_alignRight="@+id/linearLayout" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -97,24 +127,7 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignEnd="@+id/linearLayout">
-
-            <ToggleButton
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="@string/Start"
-                android:id="@+id/tglStart"
-                android:checked="false"
-                android:textOff="@string/toggle_off"
-                android:textOn="@string/toggle_on"
-                android:longClickable="false" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_marginTop="5dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -129,31 +142,13 @@
                 android:id="@+id/txtDateTime" />
         </LinearLayout>
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"></LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent" >
-
-            </LinearLayout>
-        </LinearLayout>
-
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/scrollView"
-            android:layout_below="@+id/linearLayout"
             android:layout_alignParentStart="true"
-            android:layout_marginTop="5dp">
+            android:layout_marginTop="5dp"
+            android:layout_alignParentLeft="true">
 
             <LinearLayout
                 android:orientation="vertical"
@@ -163,27 +158,25 @@
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" >
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/accelerometer"
-                        android:id="@+id/txtAccelerometer_Title"
-                        android:layout_column="0" />
+                        android:id="@+id/txtAccelerometer_Title" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/txtAccelerometer_Available"
-                        android:text="@string/sensor_available_ng"
-                        android:layout_column="2" />
+                        android:text="@string/sensor_available_ng" />
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:orientation="horizontal"
-                    android:layout_column="0"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
@@ -192,16 +185,14 @@
                         android:layout_height="wrap_content"
                         android:text="@string/X_axis"
                         android:id="@+id/txtAccelerometer_X_Title"
-                        android:layout_gravity="right"
-                        android:layout_marginLeft="@dimen/margin_left_sensor_value"
-                        android:autoText="false" />
+                        android:layout_gravity="end"
+                        android:layout_marginLeft="@dimen/margin_left_sensor_value" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/Zero"
-                        android:id="@+id/txtAccelerometer_X"
-                        android:layout_column="2" />
+                        android:id="@+id/txtAccelerometer_X" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -214,15 +205,14 @@
                         android:layout_height="wrap_content"
                         android:text="@string/Y_axis"
                         android:id="@+id/txtAccelerometer_Y_Title"
-                        android:layout_gravity="right"
+                        android:layout_gravity="end"
                         android:layout_marginLeft="@dimen/margin_left_sensor_value" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/Zero"
-                        android:id="@+id/txtAccelerometer_Y"
-                        android:layout_column="2" />
+                        android:id="@+id/txtAccelerometer_Y" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -235,15 +225,14 @@
                         android:layout_height="wrap_content"
                         android:text="@string/Z_axis"
                         android:id="@+id/txtAccelerometer_Z_Title"
-                        android:layout_gravity="right"
+                        android:layout_gravity="end"
                         android:layout_marginLeft="@dimen/margin_left_sensor_value" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/Zero"
-                        android:id="@+id/txtAccelerometer_Z"
-                        android:layout_column="2" />
+                        android:id="@+id/txtAccelerometer_Z" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -256,20 +245,17 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/gravity"
-                        android:id="@+id/txtGravity_Title"
-                        android:layout_column="0" />
+                        android:id="@+id/txtGravity_Title" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/txtGravity_Available"
-                        android:text="@string/sensor_available_ng"
-                        android:layout_column="2" />
+                        android:text="@string/sensor_available_ng" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:orientation="horizontal"
-                    android:layout_column="0"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" >
 
@@ -278,16 +264,14 @@
                         android:layout_height="wrap_content"
                         android:text="@string/X_axis"
                         android:id="@+id/txtGravity_X_Title"
-                        android:layout_gravity="right"
-                        android:layout_marginLeft="@dimen/margin_left_sensor_value"
-                        android:autoText="false" />
+                        android:layout_gravity="end"
+                        android:layout_marginLeft="@dimen/margin_left_sensor_value" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/Zero"
-                        android:id="@+id/txtGravity_X"
-                        android:layout_column="2" />
+                        android:id="@+id/txtGravity_X" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -300,15 +284,14 @@
                         android:layout_height="wrap_content"
                         android:text="@string/Y_axis"
                         android:id="@+id/txtGravity_Y_Title"
-                        android:layout_gravity="right"
+                        android:layout_gravity="end"
                         android:layout_marginLeft="@dimen/margin_left_sensor_value" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/Zero"
-                        android:id="@+id/txtGravity_Y"
-                        android:layout_column="2" />
+                        android:id="@+id/txtGravity_Y" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -321,101 +304,14 @@
                         android:layout_height="wrap_content"
                         android:text="@string/Z_axis"
                         android:id="@+id/txtGravity_Z_Title"
-                        android:layout_gravity="right"
+                        android:layout_gravity="end"
                         android:layout_marginLeft="@dimen/margin_left_sensor_value" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/Zero"
-                        android:id="@+id/txtGravity_Z"
-                        android:layout_column="2" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/linear_accelerometer"
-                        android:id="@+id/txtLinear_Acceleration_Title"
-                        android:layout_column="0" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/txtLinear_Acceleration_Available"
-                        android:text="@string/sensor_available_ng"
-                        android:layout_column="2" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_column="0"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" >
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/X_axis"
-                        android:id="@+id/txtLinear_Acceleration_X_Title"
-                        android:layout_gravity="right"
-                        android:layout_marginLeft="@dimen/margin_left_sensor_value"
-                        android:autoText="false" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/Zero"
-                        android:id="@+id/txtLinear_Acceleration_X"
-                        android:layout_column="2" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" >
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/Y_axis"
-                        android:id="@+id/txtLinear_Acceleration_Y_Title"
-                        android:layout_gravity="right"
-                        android:layout_marginLeft="@dimen/margin_left_sensor_value" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/Zero"
-                        android:id="@+id/txtLinear_Acceleration_Y"
-                        android:layout_column="2" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" >
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/Z_axis"
-                        android:id="@+id/txtLinear_Acceleration_Z_Title"
-                        android:layout_gravity="right"
-                        android:layout_marginLeft="@dimen/margin_left_sensor_value" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/Zero"
-                        android:id="@+id/txtLinear_Acceleration_Z"
-                        android:layout_column="2" />
+                        android:id="@+id/txtGravity_Z" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -434,8 +330,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/txtGyroscope_Available"
-                        android:text="@string/sensor_available_ng"
-                        android:layout_column="2" />
+                        android:text="@string/sensor_available_ng" />
 
                 </LinearLayout>
 
@@ -449,15 +344,14 @@
                         android:layout_height="wrap_content"
                         android:text="@string/X_axis"
                         android:id="@+id/txtGyroscope_X_Title"
-                        android:layout_gravity="right"
+                        android:layout_gravity="end"
                         android:layout_marginLeft="@dimen/margin_left_sensor_value" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/Zero"
-                        android:id="@+id/txtGyroscope_X"
-                        android:layout_column="2" />
+                        android:id="@+id/txtGyroscope_X" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -470,15 +364,14 @@
                         android:layout_height="wrap_content"
                         android:text="@string/Y_axis"
                         android:id="@+id/txtGyroscope_Y_Title"
-                        android:layout_gravity="right"
+                        android:layout_gravity="end"
                         android:layout_marginLeft="@dimen/margin_left_sensor_value" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/Zero"
-                        android:id="@+id/txtGyroscope_Y"
-                        android:layout_column="2" />
+                        android:id="@+id/txtGyroscope_Y" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -491,15 +384,14 @@
                         android:layout_height="wrap_content"
                         android:text="@string/Z_axis"
                         android:id="@+id/txtGyroscope_Z_Title"
-                        android:layout_gravity="right"
+                        android:layout_gravity="end"
                         android:layout_marginLeft="@dimen/margin_left_sensor_value" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/Zero"
-                        android:id="@+id/txtGyroscope_Z"
-                        android:layout_column="2" />
+                        android:id="@+id/txtGyroscope_Z" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -518,8 +410,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/txtMagnetic_Field_Available"
-                        android:text="@string/sensor_available_ng"
-                        android:layout_column="2" />
+                        android:text="@string/sensor_available_ng" />
 
                 </LinearLayout>
 
@@ -533,15 +424,14 @@
                         android:layout_height="wrap_content"
                         android:text="@string/X_axis"
                         android:id="@+id/txtMagnetic_Field_X_Title"
-                        android:layout_gravity="right"
+                        android:layout_gravity="end"
                         android:layout_marginLeft="@dimen/margin_left_sensor_value" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/Zero"
-                        android:id="@+id/txtMagnetic_Field_X"
-                        android:layout_column="2" />
+                        android:id="@+id/txtMagnetic_Field_X" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -554,15 +444,14 @@
                         android:layout_height="wrap_content"
                         android:text="@string/Y_axis"
                         android:id="@+id/txtMagnetic_Field_Y_Title"
-                        android:layout_gravity="right"
+                        android:layout_gravity="end"
                         android:layout_marginLeft="@dimen/margin_left_sensor_value" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/Zero"
-                        android:id="@+id/txtMagnetic_Field_Y"
-                        android:layout_column="2" />
+                        android:id="@+id/txtMagnetic_Field_Y" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -575,22 +464,20 @@
                         android:layout_height="wrap_content"
                         android:text="@string/Z_axis"
                         android:id="@+id/txtMagnetic_Field_Z_Title"
-                        android:layout_gravity="right"
+                        android:layout_gravity="end"
                         android:layout_marginLeft="@dimen/margin_left_sensor_value" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/Zero"
-                        android:id="@+id/txtMagnetic_Field_Z"
-                        android:layout_column="2" />
+                        android:id="@+id/txtMagnetic_Field_Z" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp">
+                    android:layout_height="wrap_content">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -602,8 +489,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/txtOrientation_Available"
-                        android:text="@string/sensor_available_ng"
-                        android:layout_column="2" />
+                        android:text="@string/sensor_available_ng" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -616,36 +502,15 @@
                         android:layout_height="wrap_content"
                         android:text="@string/azimuth"
                         android:id="@+id/txtOrientation_Azimuth_Title"
-                        android:layout_gravity="right"
+                        android:layout_gravity="end"
                         android:layout_marginLeft="@dimen/margin_left_sensor_value" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/Zero"
-                        android:id="@+id/txtOrientation_Azimuth"
-                        android:layout_column="2" />
+                        android:id="@+id/txtOrientation_Azimuth_Radian" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/left_parenthesis"
-                        android:id="@+id/txtOrientation_Azimuth_Left_Parenthesis"
-                        android:layout_column="2" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/Zero"
-                        android:id="@+id/txtOrientation_Azimuth_Radian"
-                        android:layout_column="2" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/right_parenthesis"
-                        android:id="@+id/txtOrientation_Azimuth_Right_Parenthesis"
-                        android:layout_column="2" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -658,36 +523,14 @@
                         android:layout_height="wrap_content"
                         android:text="@string/pitch"
                         android:id="@+id/txtOrientation_Pitch_Title"
-                        android:layout_gravity="right"
+                        android:layout_gravity="end"
                         android:layout_marginLeft="@dimen/margin_left_sensor_value" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/Zero"
-                        android:id="@+id/txtOrientation_Pitch"
-                        android:layout_column="2" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/left_parenthesis"
-                        android:id="@+id/txtOrientation_Pitch_Left_Parenthesis"
-                        android:layout_column="2" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/Zero"
-                        android:id="@+id/txtOrientation_Pitch_Radian"
-                        android:layout_column="2" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/right_parenthesis"
-                        android:id="@+id/txtOrientation_Pitch_Right_Parenthesis"
-                        android:layout_column="2" />
+                        android:id="@+id/txtOrientation_Pitch_Radian" />
 
                 </LinearLayout>
 
@@ -701,52 +544,16 @@
                         android:layout_height="wrap_content"
                         android:text="@string/roll"
                         android:id="@+id/txtOrientation_Roll_Title"
-                        android:layout_gravity="right"
+                        android:layout_gravity="end"
                         android:layout_marginLeft="@dimen/margin_left_sensor_value" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/Zero"
-                        android:id="@+id/txtOrientation_Roll"
-                        android:layout_column="2" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/left_parenthesis"
-                        android:id="@+id/txtOrientation_Roll_Left_Parenthesis"
-                        android:layout_column="2"
-                        android:singleLine="true" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/Zero"
-                        android:id="@+id/txtOrientation_Roll_Radian"
-                        android:layout_column="2" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/right_parenthesis"
-                        android:id="@+id/txtOrientation_Roll_Right_Parenthesis"
-                        android:layout_column="2" />
+                        android:id="@+id/txtOrientation_Roll_Radian" />
 
                 </LinearLayout>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/other_senser_list"
-                    android:id="@+id/txtOther_Sensor_Title"
-                    android:layout_marginTop="5dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/brank"
-                    android:id="@+id/txtOther_Sensor" />
 
             </LinearLayout>
         </ScrollView>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">軌関ロガー v3.1</string>
+    <string name="app_name">軌関ロガー v5.0</string>
     <string name="Zero">0</string>
     <string name="interval_label">取得間隔：</string>
     <string name="interval_default">200</string>
@@ -23,7 +23,7 @@
     <string name="linear_accelerometer">直線加速度センサー[m/s^2]：</string>
     <string name="gyroscope">角速度センサー[rad/s]：</string>
     <string name="magnetic_field">磁界センサー[μT]：</string>
-    <string name="orientation">方位センサー[deg(rad)]：</string>
+    <string name="orientation">方位センサー[rad]：</string>
     <string name="azimuth">方位角：</string>
     <string name="pitch">回転角：</string>
     <string name="roll">傾斜角：</string>
@@ -32,4 +32,8 @@
     <string name="sensor_available_ng">×未搭載</string>
     <string name="left_parenthesis">(</string>
     <string name="right_parenthesis">)</string>
+    <string name="accelerometer_after_correction">傾き補正加速度センサー[m/s^2]：</string>
+    <string name="file_name_hint">例)1_1_関_発注_胸</string>
+    <string name="file_name_default">1_2_名前_作業_部位</string>
+    <string name="button_initialize">初期化</string>
 </resources>
